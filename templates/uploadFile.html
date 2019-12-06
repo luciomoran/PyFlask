@@ -1,0 +1,44 @@
+{% extends "layout.html" %}    
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="CSS.css">
+        <style type="text/css">
+            conten {
+                width: 33.33%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }  
+        </style>
+        <b><h1 style="text-align: center;">Reporteador Automatizado</h1></b>
+        <hr>
+        <hr>
+        <p style="align-content: center;">
+            {% for table in tables %}
+                {{table|safe}}
+            {% endfor %}
+        </p><br>
+    </head> 
+    <body style="background-color: powderblue;" class="conten">
+        <div class="conten">
+                <form action="/message" method="POST">
+                    <b><h3 style="text-align: center;">Ingrese las columnas a graficar (Nombre exacto):</h3></b><br>
+                    <input type="text" name="columnY" class="form-control" placeholder="Nombre de la columna (Y)" required><br>
+                    <input type="text" name="columnX" class="form-control" placeholder="Nombre de la columna (X)" required><br>
+                    <label>Seleccione una gráfica: </label>
+                    <select name="option">
+                        <option value="barra">Barras</option>
+                        <option value="pastel">Pastel</option>
+                        <option value="lineal">Lineal</option>         
+                    </select>
+                    <input type="text" name="nameGraph" class="form-control" placeholder="Nombre de la gráfica" required><br>
+                    <p style="text-align: center;">
+                        <button type="submit" class="btn btn-primary" class="conten" style="background-color: red;">Generar y Guardar Gráfica
+
+                        </button>
+                    </p>
+                </form>
+        </div>        
+    </body>
+{% endblock %}

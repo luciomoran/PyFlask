@@ -1,0 +1,33 @@
+{% extends "layout.html" %}    
+
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS.css">
+    <style type="text/css">
+        conten {
+            width: 33.33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }  
+    </style>
+    <font face="Arial" size="16">
+        <b><h1 style="text-align: center;">Reporteador Automatizado</h1></b>
+    </font>
+    <hr>
+    <hr>    
+</head> 
+<body style="background: powderblue;" type="text/CSS">
+    <p>
+        <h5 style="text-align: center;">Seleccione un archivo desde su ordenador:</h5><br>
+    </p>
+    <div class="conten;">
+            <form action="/uploadFile", method="POST" enctype="multipart/form-data" class="text-center" style="align-content: center;">
+               <input type="file" name="fileUpload"><br><br>
+                <button type="submit" class="btn btn-primary" style="background-color: red;">Subir</button>
+            </form>
+    </div>
+</body>
+
+{% endblock %}
